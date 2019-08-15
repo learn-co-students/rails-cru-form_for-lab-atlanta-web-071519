@@ -1,0 +1,9 @@
+<h1>Genre Form</h1>
+<br><br>
+<%=form_tag genres_path do%>
+    <%=label_tag 'Name'%><br>
+    <%=text_field_tag 'genre[name]'%><br>
+    <%=submit_tag 'Create Genre'%>
+<%end%>
+<br><br>
+<%link_to 'Genre List', genres_path%>

@@ -1,0 +1,25 @@
+<h1><%=@artist.name%></h1>
+<br><br>
+<p><%=@artist.bio%></p>
+<br><br>
+<%link_to 'Edit Artist', edit_artist_path(@artist) %>
+<br><br>
+<%=form_tag artist_path(@artist), method:'delete' do%>
+    <%=submit_tag 'Delete Artist'%>
+<%end%>
+<br><br>
+<h3>Songs:</h3><br>
+<ul>
+<%@artist.songs.each do |s|%>
+    <li><%=link_to s.name, song_path(s)%></li>
+<%end%> 
+</ul>
+<br><br>
+<h3>Genres:</h3><br>
+<ul>
+<%@artist.songs.each do |s|%>
+    <li><%=link_to s.genre.name, genre_path(s.genre)%></li>
+<%end%> 
+</ul>
+<br><br>
+<%=link_to 'Artists List', artists_path%>

@@ -1,0 +1,9 @@
+<h1>Edit Artist</h1>
+<br><br>
+<%=form_for @artist, url: artist_path(@artist), html: {method:'patch'} do |f|%>
+    <%=f.text_field :name%>
+    <%=f.text_area(:bio, size: '50x10')%>
+    <%=f.submit%>
+<%end%>
+<br><br>
+<%=link_to 'Artist List', artists_path%>
