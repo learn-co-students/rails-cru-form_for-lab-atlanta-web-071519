@@ -1,0 +1,8 @@
+<h1>Edit Genre</h1>
+<br><br>
+<%=form_for @genre, url: genre_path(@genre), html: {method:'patch'} do |f|%>
+    <%=f.text_field :name%>
+    <%=f.submit%>
+<%end%>
+<br><br>
+<%=link_to 'Genre List', genres_path%>
